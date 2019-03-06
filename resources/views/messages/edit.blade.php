@@ -3,7 +3,7 @@
 @section('contenido')
     <h1>Mensaje</h1>
 
-    <form action="{{ route('messages.update', $message->id) }}" method="POST">
+    <form action="{{ route('mensajes.update', $message->id) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <div class="form-group">

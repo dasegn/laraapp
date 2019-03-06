@@ -3,7 +3,7 @@
 @section('contenido')
     <h1>Contacto</h1>
 
-    <form action="{{ route('messages.store') }}" method="POST">
+    <form action="{{ route('mensajes.store') }}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="nombre">

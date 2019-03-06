@@ -37,10 +37,10 @@
                     <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
                 </li>
                 <li class="nav-item {{ activeMenu('mensajes') }}">
-                     <a class="nav-link" href="{{ route('messages.index') }}">Mensajes</a>
+                     <a class="nav-link" href="{{ route('mensajes.index') }}">Mensajes</a>
                 </li>
                 <li class="nav-item {{ activeMenu('mensajes/create') }}">
-                    <a class="nav-link" href="{{ route('messages.create') }}">Contacto</a>
+                    <a class="nav-link" href="{{ route('mensajes.create') }}">Contacto</a>
                 </li>
                 </ul>
             </div>
