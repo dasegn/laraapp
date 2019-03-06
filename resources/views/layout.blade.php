@@ -27,28 +27,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                <li class="nav-item {{ activeMenu('inicio') }}">
-                <a class="nav-link" href="{{ route('inicio') }}">Inicio <span class="sr-only">(current)</span></a>
+                <li class="nav-item {{ activeMenu('/') }}">
+                    <a class="nav-link" href="{{ route('inicio') }}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {{ activeMenu('acerca') }}">
+                <li class="nav-item {{ activeMenu('about') }}">
                     <a class="nav-link" href="{{ route('acerca') }}">Acerca</a>
                 </li>
                 <li class="nav-item {{ activeMenu('servicios') }}">
                     <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
                 </li>
                 <li class="nav-item {{ activeMenu('mensajes') }}">
-                        <a class="nav-link" href="{{ route('mensajes') }}">Mensajes</a>
-                    </li>
+                     <a class="nav-link" href="{{ route('messages.index') }}">Mensajes</a>
+                </li>
+                <li class="nav-item {{ activeMenu('mensajes/create') }}">
+                    <a class="nav-link" href="{{ route('messages.create') }}">Contacto</a>
+                </li>
                 </ul>
             </div>
     </nav>
 </header>
 
     <div class="container">
-        @yield('contenido')
+        <div class="row">
+            <div class="col py-5">
+                @yield('contenido')
+            </div>
+        </div>
     </div>
 
-
+    {{-- --}}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
