@@ -35,3 +35,5 @@ Route::get('/saludos/{nombre?}', ['as' => 'saludos', 'uses' => 'PagesController@
 
 Route::resource('mensajes', 'MessagesController');
 
+Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::post('login', 'Auth\LoginController@login');
