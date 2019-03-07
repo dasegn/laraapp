@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                 <li class="nav-item {{ activeMenu('/') }}">
-                    <a class="nav-link" href="{{ route('inicio') }}">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('home') }}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item {{ activeMenu('about') }}">
                     <a class="nav-link" href="{{ route('acerca') }}">Acerca</a>
@@ -42,6 +42,26 @@
                 <li class="nav-item {{ activeMenu('mensajes/create') }}">
                     <a class="nav-link" href="{{ route('mensajes.create') }}">Contacto</a>
                 </li>
+
+                @if(auth()->check())
+                <li class="nav-item">
+                <a class="nav-link" href="/usuarios">Usuarios</a>
+                </li>
+                @endif                
+                
+                @if(auth()->check())
+                <li class="nav-item">
+                <a class="nav-link" href="/logout">Cerrar sesión {{ auth()->user()->name }}</a>
+                </li>
+                @endif
+
+                @if(auth()->guest())
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                @endif
+
+
                 </ul>
             </div>
     </nav>

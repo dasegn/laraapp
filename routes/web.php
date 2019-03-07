@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', ['as' => 'inicio', 'uses' => 'PagesController@inicio']);
-
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@inicio']);
+Route::get('/home', function(){
+    return redirect('/mensajes');
+});
 // mensajes
 // Route::get('/mensajes', ['as' => 'mensajes', 'uses' => 'PagesController@contacto']);
 // Route::post('contacto', 'PagesController@mensajes');
@@ -25,15 +27,11 @@ Route::get('/saludos/{nombre?}', ['as' => 'saludos', 'uses' => 'PagesController@
 
 
 // Mensajes
-// Route::get('/mensajes', ['as' => 'messages.index', 'uses' => 'MessagesController@index' ]);
-// Route::get('/mensajes/create', ['as' => 'messages.create', 'uses' => 'MessagesController@create' ]);
-// Route::post('/mensajes', ['as' => 'messages.store', 'uses' => 'MessagesController@store' ]);
-// Route::get('/mensajes/{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show' ]);
-// Route::get('/mensajes/{id}/edit', ['as' => 'messages.edit', 'uses' => 'MessagesController@edit' ]);
-// Route::put('/mensajes/{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update' ]);
-// Route::delete('/mensajes/{id}', ['as' => 'messages.destroy', 'uses' => 'MessagesController@destroy' ]);
-
 Route::resource('mensajes', 'MessagesController');
 
-Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
 Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+
+// Users
+Route::get('usuarios', ['as' => 'users.index', 'uses' => 'UsersController@index']);
